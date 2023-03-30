@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media (max-width:640px) {
+    .iframeSt{
+        width: 100% !important;
+        height: 260px !important;
+    }
+
+}
+.iframeSt{
+    width: 516px;
+    height: 350px;
+}
