@@ -7,7 +7,7 @@ export const login = (user) => async(dispatch) =>{
         const config = { headers: { "Content-Type": "application/json" } };
         const userData = await axios({
             method:"POST",
-            url:"https://github.com/AMS006/M-video-client.git/user/login",
+            url:"https://wandering-trench-coat-tick.cyclic.app/user/login",
             data: user,
             config
         })
@@ -22,7 +22,7 @@ export const signUp = (user) => async(dispatch) =>{
         const config = { headers: { "Content-Type": "application/json" } };
         const userData = await axios({
             method:"POST",
-            url:"https://github.com/AMS006/M-video-client.git/user/register",
+            url:"https://wandering-trench-coat-tick.cyclic.app/user/register",
             data: user,
             config
         })
@@ -38,7 +38,7 @@ export const logout = () => async(dispatch) =>{
         const config = { headers: { "Content-Type": "application/json" } };
         await axios({
             method:"GET",
-            url:"https://github.com/AMS006/M-video-client.git/user/logout",
+            url:"https://wandering-trench-coat-tick.cyclic.app/user/logout",
             config
         })
         return dispatch(userLogout())
@@ -51,7 +51,7 @@ export const getUserDetails = () => async(dispatch) =>{
         dispatch(userRequest());
         const userData = await axios({
             method:"GET",
-            url:"https://github.com/AMS006/M-video-client.git/user/me",
+            url:"https://wandering-trench-coat-tick.cyclic.app/user/me",
         })
         return dispatch(userSuccess(userData.data))
     }catch (error) {

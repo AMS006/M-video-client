@@ -15,11 +15,13 @@ function SignUpPage() {
   const [password,setPassword] = useState("")
   const [confirmPassword,setConfirmPassword] = useState("")
   const [passwordMatch,setPasswordMatch] = useState(true)
+  const [signVal,setSignVal] = useState("SignUp")
   const user = useSelector((state) => state.user)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSubmit = (e) =>{
     e.preventDefault()
+    setSignVal("Signing...")
     if(password !== confirmPassword){
       setPasswordMatch(false)
     }

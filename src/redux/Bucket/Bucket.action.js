@@ -6,7 +6,7 @@ export const createBucket = (bucket)=> async(dispatch) =>{
         dispatch(bucketRequest())
         const bucketData = await axios({
             method:"POST",
-            url:"https://github.com/AMS006/M-video-client.git/bucket/create",
+            url:"https://wandering-trench-coat-tick.cyclic.app/bucket/create",
             data: bucket
         })
         return dispatch(bucketAddSuccess(bucketData.data))
@@ -19,7 +19,7 @@ export const getAllBucket = ()=> async(dispatch) =>{
         dispatch(bucketRequest())
         const bucketData = await axios({
             method:"GET",
-            url:"https://github.com/AMS006/M-video-client.git/bucket",
+            url:"https://wandering-trench-coat-tick.cyclic.app/bucket",
         })
         return dispatch(bucketSuccess(bucketData.data))
     } catch (error) {
@@ -31,7 +31,7 @@ export const getUserBucket = () => async(dispatch) =>{
         dispatch(bucketRequest())
         const userBucket = await axios({
             method:"GET",
-            url:"https://github.com/AMS006/M-video-client.git/bucket/user"
+            url:"https://wandering-trench-coat-tick.cyclic.app/bucket/user"
         })
         dispatch(bucketGetUserSuccess(userBucket.data))
     } catch (error) {
@@ -42,7 +42,7 @@ export const getBucketById = (id) => async(dispatch) =>{
     try {
         const bucketData = await axios({
             method:"GET",
-            url:`https://github.com/AMS006/M-video-client.git/bucket/user/${id}`
+            url:`https://wandering-trench-coat-tick.cyclic.app/bucket/user/${id}`
         })
         dispatch(bucketGetByIdSuccess(bucketData.data));
     } catch (error) {

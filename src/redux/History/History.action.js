@@ -6,7 +6,7 @@ export const addUserHistory = (id) => async(dispatch) =>{
         dispatch(historyRequest)
         const history = await axios({
             method:"POST",
-            url:"https://github.com/AMS006/M-video-client.git/history",
+            url:"https://wandering-trench-coat-tick.cyclic.app/history",
             data: {id}
         })
         dispatch(historyAddSuccess(history.data))
@@ -18,7 +18,7 @@ export const getAllUserHistory = () => async(dispatch) =>{
     try {
         const history = await axios({
             method:"GET",
-            url:"https://github.com/AMS006/M-video-client.git/history"
+            url:"https://wandering-trench-coat-tick.cyclic.app/history"
         })
         dispatch(historyGetSuccess(history.data))
     } catch (error) {
@@ -30,7 +30,7 @@ export const deleteHistory = (id) => async(dispatch) =>{
         dispatch(historyRequest())
         await axios({
             method:"DELETE",
-            url:`https://github.com/AMS006/M-video-client.git/history/${id}`
+            url:`https://wandering-trench-coat-tick.cyclic.app/history/${id}`
         })
         dispatch(historyDeleteSuccess(id))
     } catch (error) {

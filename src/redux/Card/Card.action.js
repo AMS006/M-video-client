@@ -6,7 +6,7 @@ export const createCard = (card)=> async(dispatch) =>{
         dispatch(cardRequest())
         const cardData = await axios({
             method:"POST",
-            url:"https://github.com/AMS006/M-video-client.git/card/create",
+            url:"https://wandering-trench-coat-tick.cyclic.app/card/create",
             data: card
         })
         return dispatch(addCardSuccess(cardData.data))
@@ -19,7 +19,7 @@ export const deleteCard = (id) => async(dispatch) =>{
         dispatch(cardRequest())
         await axios({
             method:"DELETE",
-            url:`https://github.com/AMS006/M-video-client.git/card/${id}`
+            url:`https://wandering-trench-coat-tick.cyclic.app/card/${id}`
         })
         dispatch(cardDeleteSuccess(id))
     } catch (error) {
@@ -31,7 +31,7 @@ export const updateCard = ({id,title,code,bucket1,myId}) => async(dispatch) =>{
         dispatch(cardRequest())
         const cardData = await axios({
             method:"PUT",
-            url:`https://github.com/AMS006/M-video-client.git/card/${id}`,
+            url:`https://wandering-trench-coat-tick.cyclic.app/card/${id}`,
             data: {title,code,bucket1}
         })
         dispatch(updateCardSuccess(cardData.data))
@@ -45,7 +45,7 @@ export const getAllCard = (id)=> async(dispatch) =>{
         dispatch(cardRequest())
         const cardData = await axios({
             method:"GET",
-            url:`https://github.com/AMS006/M-video-client.git/card/${id}`
+            url:`https://wandering-trench-coat-tick.cyclic.app/card/${id}`
         })
         return dispatch(cardSuccess(cardData.data))
     } catch (error) {

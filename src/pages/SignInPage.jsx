@@ -10,12 +10,14 @@ import { login } from '../redux/User/User.action'
 function SignInPage() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+  const [signVal,setSignVal] = useState('SignIn')
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user)
 //   const alert = useAlert()
   const handleSubmit = (e) =>{
     e.preventDefault();
+    setSignVal("Signing...")
     dispatch(login({email,password}));
     setEmail("")
     setPassword("")
@@ -25,6 +27,7 @@ function SignInPage() {
       navigate('/')
     }else if(user && user.error){
       window.alert(user.error)
+      setSignVal("SignIn")
     }
   },[user])
 
@@ -49,7 +52,7 @@ function SignInPage() {
                     <input type="password" value={password} name="password" placeholder='Enter Your password' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="password" required onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className='bg-slate-800 text-white py-2 shadow rounded-full'>
-                    <input type="submit" value="SignIn" className='h-full w-full cursor-pointer' />
+                    <input type="submit" value={signVal} className='h-full w-full cursor-pointer' />
                 </div>
                 <div className='text-slate-900 hover:underline font-semibold text-center'>
                     <Link to="/signup">Don't Have Account? Sign Up with us</Link>
